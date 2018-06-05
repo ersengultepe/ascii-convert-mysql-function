@@ -1,0 +1,85 @@
+DROP FUNCTION IF EXISTS esinav.FTURKCE;
+CREATE FUNCTION FTURKCE (str varchar(4000)) RETURNS varchar(4000)
+BEGIN
+	
+  /*
+    
+Ç &Ccedil;  ç &ccedil;
+
+Ğ &#286;  ğ &#287;
+
+İ &#304; ı &#305;
+
+Ö &Ouml; ö &ouml;
+
+Ş &#350; ş &#351;
+
+Ü &Uuml; ü &uuml;
+& &amp; 
+< &lt;
+> &gt;
+" &quot;
+' &#039;
+*/
+  
+  set str = replace(str, '&amp;&Ccedil;', 'Ç');
+  set str = replace(str, '&amp;&ccedil;', 'ç');
+  set str = replace(str, '&amp;&#286;', 'Ğ');
+  set str = replace(str, '&amp;&#287;', 'ğ');
+  set str = replace(str, '&amp;&#304;', 'İ');  
+  set str = replace(str, '&amp;&#305;', 'ı');  
+  set str = replace(str, '&amp;&Ouml;', 'Ö');  
+  set str = replace(str, '&amp;&ouml;', 'ö');  
+  set str = replace(str, '&amp;&#350;', 'Ş');
+  set str = replace(str, '&amp;&#351;', 'ş');
+  set str = replace(str, '&amp;&Uuml;', 'Ü');
+  set str = replace(str, '&amp;&uuml;', 'ü'); 
+  
+  set str = replace(str, '&amp;Ccedil;', 'Ç');
+  set str = replace(str, '&amp;ccedil;', 'ç');
+  set str = replace(str, '&amp;#286;', 'Ğ');
+  set str = replace(str, '&amp;#287;', 'ğ');
+  set str = replace(str, '&amp;#304;', 'İ');  
+  set str = replace(str, '&amp;#305;', 'ı');  
+  set str = replace(str, '&amp;Ouml;', 'Ö');  
+  set str = replace(str, '&amp;ouml;', 'ö');  
+  set str = replace(str, '&amp;#350;', 'Ş');
+  set str = replace(str, '&amp;#351;', 'ş');
+  set str = replace(str, '&amp;Uuml;', 'Ü');
+  set str = replace(str, '&amp;uuml;', 'ü');
+  
+  set str = replace(str, '&Ccedil;', 'Ç');
+  set str = replace(str, '&ccedil;', 'ç');
+  set str = replace(str, '&#286;', 'Ğ');
+  set str = replace(str, '&#287;', 'ğ');
+  set str = replace(str, '&#304;', 'İ');  
+  set str = replace(str, '&#305;', 'ı');  
+  set str = replace(str, '&Ouml;', 'Ö');  
+  set str = replace(str, '&ouml;', 'ö');  
+  set str = replace(str, '&#350;', 'Ş');
+  set str = replace(str, '&#351;', 'ş');
+  set str = replace(str, '&Uuml;', 'Ü');
+  set str = replace(str, '&uuml;', 'ü');
+  
+  set str = replace(str, '&lt;', '<');
+  set str = replace(str, '&gt;', '>');
+  set str = replace(str, '&quot;', '"');
+  set str = replace(str, '&#039;', '\'');
+  set str = replace(str, '&amp;', '&');
+  
+  set str = replace(str, '&amp;&lt;', '<');
+  set str = replace(str, '&amp;&gt;', '>');
+  set str = replace(str, '&amp;&quot;', '"');
+  set str = replace(str, '&amp;&#039;', '\'');
+ 
+  set str = replace(str, '&amp;lt;', '<');
+  set str = replace(str, '&amp;gt;', '>');
+  set str = replace(str, '&amp;quot;', '"');
+  set str = replace(str, '&amp;#039;', '\'');
+  
+  set str = replace(str, '\n', '');
+  set str = replace(str, '\t', '');
+  set str = replace(str, '&nbsp;', '');
+  
+  return str;
+END
