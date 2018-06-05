@@ -79,7 +79,7 @@ BEGIN
   
   set str = replace(str, '\n', '');
   set str = replace(str, '\t', '');
-  set str = replace(str, '&nbsp;', '');
+  set str = replace(str, '&nbsp;', ' ');
   
   return str;
 END
