@@ -4,9 +4,11 @@ This function is used to convert the ascii characters corresponding to the Turki
 You can change and use it by yourself. I hope it helps.
 
 # Sample Usage;
+
+without using functions
 select text from posts
+&lt;p&gt;&lt;strong&gt;Milletlerarası&amp;nbsp;andlaşmaları&amp;nbsp;onaylama ve yayımlama yetkisi aşağıdakilerden hangisine aittir?&lt;/strong&gt;&lt;/p&gt;
 
-& lt; p & gt; & lt; strong & gt; International & amp; nbsp; Treaties & amp; nbsp; authorizations and publishing rights belong to: & lt; p & gt;
-
+after using the function
 select FTURKCE(text) from posts
-<p> <strong> Which of the following do you have the authority to approve and publish international agreements? </ strong> </ p>
+<p><strong>Milletlerarası andlaşmaları onaylama ve yayımlama yetkisi aşağıdakilerden hangisine aittir?</strong></p>
